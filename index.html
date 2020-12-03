@@ -1,0 +1,213 @@
+<html>
+    <header>
+        <title>Bulking Algorithm</title>
+        <link rel="stylesheet" href="style.css">
+    </header>
+    <body >
+        <div class="contentContainer">
+            <h1>
+                An Algorithmic Approach To Bulking
+            </h1>
+            <p>
+                “Bulking”, “Massing” and “Gaining”  are all terms used to describe a period of time where an individual is purposely eating more calories
+                (aka overfeeding) than they need to maintain their weight. This is usually done with the end goal of gaining muscle or improving sports
+                performance because the best “gains” are typically seen in a calorie surplus. By now it is also well documented that you can only gain
+                a finite amount of muscle over any given period of time and that excess weight gained will likely be stored as fat. This highlights
+                the importance of having a tight control on the size of the calorie surplus when bulking because the size of the surplus directly
+                influences the rate of weight gain. 
+            </p>
+            <p>
+                An algorithm is a step by step solution consisting of clear instructions. Like a cooking recipe. Most people think of computers when the
+                word algorithm is brought up, but any step by step procedure is an algorithm. The process of determining the size of an individual's
+                calorie surplus when they are bulking can also be described as an algorithm.
+            </p>
+            <p>
+                The goal of this article is to describe a simple algorithm that can be used to help individuals find a calorie surplus that mitigates the
+                risk of them gaining weight too fast or too slow. I’ll refer to the algorithm as the bulking algorithm for the rest of the article.
+            </p>
+            <p>
+                Before laying out the bulking algorithm, I am going to make some basic assumptions. The first is that the individual is consuming an
+                adequate amount of protein to promote muscle growth. The second is that the individual is regularly resistance training with sufficient
+                volume, frequency and intensity to promote hypertrophy. Lastly, we will assume that the individual already knows their maintenance calories
+                which is the number of calories they require per day to maintain their weight aka their total daily energy expenditure (TDEE). How to satisfy
+                these assumptions is outside the scope of the article.
+            </p>
+            <p>
+                Here is a flowchart describing the bulking algorithm. Below the flowchart I go into detail about how each step of the algorithm works.
+            </p>
+            <div class="imageContainer">
+                <img src="./images/algo.png" alt="Flowchart describing bulking algorithm">
+            </div>
+            <h2>
+                1. Determining Initial Surplus
+            </h2>
+            <p>
+                When determining the size of the calorie surplus, individuals can make one of two mistakes when deciding how many calories to eat. 
+            </p>
+            <div class="constrainWidth">
+                <p>
+                    1) Their surplus is too big and they put on too much fat relative to the amount of muscle they have gained.
+                    <br><br>
+                    2) Their surplus is too small or nonexistent and they are stuck spinning their wheels trying to ‘lean bulk’.
+                </p>
+            </div>
+            <p>
+                I’ve personally made both of these mistakes. When I first started lifting, I gained 50 lbs in just under 18 months. Every day I
+                would lift as much as I could and eat as much as I could. I got a lot stronger and gained some quality muscle, but I also got
+                way fatter than I wanted to. This is often referred to as a “dreamer bulk” or “dirty bulk”. This is a perfect example of mistake
+                number 1 where my surplus was too large. The reason you don’t want to do this if your goal is to improve your body composition is
+                because you are going to have a really long diet ahead of you after your bulk to lose all of the excess fat you gained.
+            </p>
+            <div class="imageContainer">
+                <img src="./images/tooLarge.png" alt="Side by side of what can happen when surplus is too small">
+            </div>
+            <p>
+                My dreamer bulk spanned from the end of my sophomore year of highschool to the middle of my senior year of highschool. Once I got
+                to college, I decided I wanted to get lean. I dieted aggressively and got the leanest I had ever been. When it was time to start
+                bulking again, I was deathly afraid of putting on excess fat like I did during my last bulk. I made mistake number 2 and spun my
+                wheels for a few months. I stayed lean, but I missed the mark when it came to bulking because I didn’t gain any significant amount of muscle. 
+            </p>
+            <div class="imageContainer">
+                <img src="./images/tooSmall.png" alt="Side by side of what can happen when surplus is too small">
+            </div>
+            <p>
+                An ideal surplus does not look like either situation I just described. The surplus should be large enough that you are gaining
+                weight, but not so large that you gain weight too fast. Individuals that have been resistance training longer are recommended
+                to have a smaller surplus while individuals who are newer to resistance training can have a larger surplus. 
+            </p>
+            <p>
+                Instead of suggesting a single value for daily calorie intake, I will suggest a calorie intake range. I have laid out three different
+                surplus range sizes along with recommendations for choosing a surplus range. Deciding which end of the range is appropriate is based
+                upon a variety of factors including training level, goals, personal preferences and inter-individual responses to a hypercaloric diet.
+                A range offers more flexibility and reduces the stress of having to hit a single calorie target. 
+            </p>
+            <table class="lsTable">
+                <tr class="lsBackgroundColor">
+                    <th style="width:20%">
+                        Approach
+                    </th>
+                    <th style="width:20%">
+                        Surplus
+                    </th>
+                    <th style="width:70%">
+                        Description
+                    </th>
+                </tr>
+                <tr>
+                    <td class="forceCenter">
+                        Conservative
+                    </td>
+                    <td class="forceCenter">
+                        100 - 250 kcal
+                    </td>
+                    <td>
+                        Choose this option if you want to gain very slowly, are somewhat lean, have 5+ years of training experience,
+                        and want to be in surplus for a long period.
+            
+                    </td>
+                </tr>
+                <tr>
+                    <td class="forceCenter">
+                        Moderate
+                    </td>
+                    <td class="forceCenter">
+                        250 - 500 kcal
+                    </td>
+                    <td>
+                        Choose this option if you want to gain slowly, and are fairly lean, and have 3+ years of training
+                        experience.
+                        <span class="lsThemeText">*Use this option if you are unsure*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="forceCenter">
+                        Aggressive
+                    </td>
+                    <td class="forceCenter" >
+                        500 - 750 kcal
+                    </td>
+                    <td>
+                        Choose this option if you want to gain quickly, are fairly lean, and are new to training.
+                    </td>
+                </tr>
+            
+            </table>
+            <p>
+                Once the surplus range size has been chosen, you can determine your goal daily calorie intake range by adding the lower and upper end
+                of the range to the individual’s maintenance calories. The result is a range that looks like the following: [ Maintenance Kcal + lower
+                end of range , Maintenance Kcal + higher end of range ].
+            </p>
+            <div class="imageContainer">
+                <img src="./images/rangeExample.png" alt="Example of how to calculate bulking intake range">
+            </div>
+            <p>
+                This will be the range the individual should eat within at the start of their bulk. In the next section, I will explain when and how to
+                change the size of the surplus range if it is necessary.
+            </p>
+            <h2>
+                2. Adjust Surplus Based On Rate Of Weight Gain
+            </h2>
+            <p>
+                Before making any changes to the current surplus, the individual should eat within the calculated goal calorie intake range for 2 weeks.
+                This is because 2 weeks worth of data is considered the gold standard for determining maintenance calories and gives us a sufficient amount
+                of data to perform an analysis.
+            </p>
+            <p>
+                To check if the surplus is too large or too small, we will look at the rate of weight gain per week. The idea here is that if the surplus is
+                too large, they will be gaining too fast and be at risk of putting on excess fat or if their surplus is too small, they will be gaining too slow
+                and risk spinning their wheels without putting on much muscle.  
+            </p>
+            <p>
+                The scientific literature suggests that from 0.25% to 1.5% of total body weight gain per month is optimal depending on the individual’s training
+                status which equates to 0.0625% to 0.375% weight gain per week. 
+            </p>
+            <div class="imageContainer">
+                <img src="./images/rateOfGain.png" alt="Visualization for what rate of weight gain is considered optimal">
+            </div>
+            <p>
+                If an individual's rate of weight gain is within the range that is considered optimal then their goal calorie intake range should stay the same.
+                If their rate of weight gain is less than 0.0625% they will want to add calories to the upper and lower end of the goal range because they are
+                gaining too slow. If their rate of weight gain is greater than 0.375% then they should subtract calories from the upper and lower end of the goal
+                range because they are gaining too fast.
+            </p>
+            <p>
+                Every two weeks, the rate of weight gain should be checked and the goal intake should be adjusted if the bulk is going to continue and if an 
+                adjustment is necessary. In the next section I will describe the last part of the algorithm which is how to decide if the individual should 
+                still be bulking or not.   
+            </p>
+            <h2>
+               3. How To Tell If The Bulk Should End 
+            </h2>
+            <p>
+                This is the hardest part of the algorithm to lay out because it ultimately comes down to subjective variables. There is limited data to guide
+                us and most exercise science/nutrition studies only last 6-12 weeks. I recommend taking a path for at least 12 weeks if bulking. Below are some
+                things you can check to determine if the bulk should continue.
+            </p>
+            <p>
+                The individual should stop bulking if they are much fatter than they would like to be and are uncomfortable with their current body composition,
+                their bulk is starting to have significant negative impacts on their health or sports performance or they no longer satisfy the assumptions listed
+                at the start of the article. 
+            </p>
+            <p>
+                The individual can continue bulking if they are still relatively lean and feel comfortable with getting bigger in pursuit of more muscle, they
+                are not experiencing significant health or sports performance side effects and they still satisfy the assumptions listed at the start of the article. 
+            </p>
+            <h2>
+                Conclusion
+            </h2>
+            <p>
+                The bulking algorithm described is an effective solution to determining whether or not someone's bulk is on track for success. I have run this
+                algorithm myself multiple times and seen great results. I am currently the biggest and leanest I have ever been as a result. 
+            </p>
+            <div class="imageContainer">
+                <img src="./images/conclusion.png" alt="Example of my current phsyique">
+            </div>
+            <p>
+                It’s also worth mentioning, this is a lot of work to do yourself. Running this algorithm by hand or mentally can be monotonous. If you are
+                interested in bulking following this algorithm and without doing all the calculations yourself, you should check out my company <a href="https://www.logsmarter.net">LogSmarter™ LLC.</a> 
+                Our nutrition tracking software uses machine learning and some other important optimizations that I have intentionally left out of this article to
+                improve upon the basic algorithm I just described and has support for fat loss and weight maintenance. 
+            </p>
+        </div>
+    </body>
+</html>
