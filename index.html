@@ -214,8 +214,25 @@
             <p>
                 Every two weeks, the rate of weight gain should be checked and the goal intake should be adjusted if the bulk is going to continue and if an 
                 adjustment is necessary. In the next section I will describe the last part of the algorithm which is how to decide if the individual should 
-                still be bulking or not.   
+                still be bulking or not. If you know your starting weight for your bulk, your current weight and how long you've been bulking, then you can
+                use the form below to see if your current rate of weight gain per week is considered slow, fast or optimal. 
             </p>
+            <div class="formTitle forceCenter greyBorder greyBackground">
+                Rate of Weight Gain Calculator
+            </div>
+            <form onsubmit="return handleRateOfWeightGainCalculatorSubmission();" class="greyBorder">
+                <div class="formField">
+                    Starting Weight <input type="number" id="startWeight" required step="0.1">
+                </div>
+                <div class="formField">
+                    Current Weight&nbsp;&nbsp;<input type="number" id="currentWeight" required step="0.1">
+                </div>
+                <div class="formField">
+                    Weeks Bulking&nbsp;&nbsp;&nbsp;<input type="number" id="weeksBulking" required step="0.1">
+                </div>
+                <button class="surplusButton formField greyBorder" type="submit">Calculate Rate of Weight Gain</button>
+                <div class="formField rateOfWeightGain lsThemeText" id="rateOfWeightGain">Enter a valid start weight, current weight and number of weeks to check if you rate of weight gain is optimal.</div>
+            </form>
             <h2>
                3. How To Tell If The Bulk Should End 
             </h2>

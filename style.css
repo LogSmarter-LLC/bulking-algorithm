@@ -136,6 +136,11 @@ button {
     width: 180px;
 }
 
+.rateOfWeightGain {
+    font-style: italic;
+    font-size: x-large;
+}
+
 button:hover {
     cursor: pointer;
     border-color: var(--ls-theme-color);
@@ -161,4 +166,10 @@ button:hover {
 
 .greyBackground {
     background-color: var(--grey-color);
+}
+
+.rateOfWeightGain {
+    width: 90%;
+    text-align: center;
+    margin-bottom: 10px;
 }

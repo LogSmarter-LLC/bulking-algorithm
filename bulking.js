@@ -45,7 +45,6 @@ class BulkingApproach{
            return defaultResponse;
        }
     }
- 
 }
  
 /**
@@ -71,7 +70,26 @@ const RECCOMENDED_RANGES = [
     MODERATE_SURPLUS_RANGE,
     AGGRESSIVE_SURPLUS_RANGE
 ];
- 
+
+/**
+ * Number of lbs, that when the user's change in body weight is below or equal to, 
+ * they will be considered to have maintained their weight.
+ */
+const WEIGHT_MAINTENANCE_THRESHOLD = 1;
+
+/**
+ * Rate of weight change per week in % of total starting body weight represents an inclusive
+ * [min,max] range where weekly change in % body weight is optimal. Should Divide by 100 if
+ * using in calculations to get as a %. This is the maximum rate that is still considered
+ * optimal for bulking. Optinally could multiply the decimal being compared to by 100.
+ */
+const MAX_BULK_RATE = 0.375;
+
+/**
+ * This is the minimum rate of weight change per week in % of total starting body weight
+ * that is still considered optimal for bulking.
+ */
+const MIN_BULK_RATE = 0.0625;
  
 /**
  * Sets the value of the surplus range calculator table that displays the 
@@ -97,7 +115,6 @@ function setRangeTable(tdee){
     });
 }
  
- 
 /**
  * Form submission handler for the bulking intake range calculator.
  * Converts the user's input for maintenance kcal into a whole number
@@ -114,6 +131,71 @@ function handleRangeCalculatorSubmission(){
     setRangeTable(tdee);
     return PREVENT_PAGE_RELOAD;
 }
+
+/**
+ * Form submission handler for rate of weight gain calculator.
+ * First checks if the rate of weight gain can be calculated.
+ * If it can then the user is told whether they are gaining
+ * fast, slow or optimally. Othewrise the user is told 
+ * if they are losing weight, have maintained their weight or
+ * some type of error has occured. This message is then displayed 
+ * below the rate of weight gain calculator.
+ */
+function handleRateOfWeightGainCalculatorSubmission(){
+    const startWeight = document.getElementById("startWeight").value;
+    const currentWeight = document.getElementById("currentWeight").value;
+    const numWeeksBulking = document.getElementById("weeksBulking").value;
+    const allInputs = [startWeight,currentWeight,numWeeksBulking];
+    const allInputsAreValidNumbers = !(allInputs.find(input => {
+        const inputIsNull = (input == null);
+        const inputIsNotANumber = isNaN(input);
+        const cannotCalc = (inputIsNull || inputIsNotANumber );
+           return cannotCalc;
+    }));
+    let defaultRateString = "Enter a valid start weight, current weight and number of weeks to check if you rate of weight gain is optimal."
+    let rateOfWeightGainMessage;
+    if(allInputsAreValidNumbers){
+        try{
+            const deltaWeight = startWeight-currentWeight;
+            const absDeltaWeight = Math.abs(deltaWeight);
+            const hasMaintained = absDeltaWeight <= WEIGHT_MAINTENANCE_THRESHOLD;
+            const hasGained = (!hasMaintained && deltaWeight < 0);
+            const hasLost = (!hasMaintained && deltaWeight > 0);
+            if(hasMaintained){
+                rateOfWeightGainMessage = "You have roughly maintained your weight. No rate of weight gain to analyze."
+            }
+            else if( hasLost){
+                rateOfWeightGainMessage = "You have lost weight. No rate of weight gain to analyze."
+            }
+            else if(hasGained){
+                const weeklyAbsDelta = (absDeltaWeight / numWeeksBulking);
+                const rateOfWeightGainPerWeekPercent = (weeklyAbsDelta / startWeight)*100;
+                const isFast = rateOfWeightGainPerWeekPercent > MAX_BULK_RATE;
+                const isSlow = rateOfWeightGainPerWeekPercent < MIN_BULK_RATE;
+                const isOptimal = (!isFast && !isSlow)
+                rateOfWeightGainMessage = "Your rate of weight gain for your bulk is considered "
+                if(isSlow){
+                    rateOfWeightGainMessage += "slow";
+                }
+                else if( isFast){
+                    rateOfWeightGainMessage += "fast";
+                }
+                else if( isOptimal ){
+                    rateOfWeightGainMessage += "optimal";
+                }
+                rateOfWeightGainMessage += ".";
+            }
+        }
+        catch(error){
+            rateOfWeightGainMessage = defaultRateString;
+        }
+    }
+    else{
+        rateOfWeightGainMessage = defaultRateString;
+    }
+    document.getElementById("rateOfWeightGain").innerHTML = rateOfWeightGainMessage;
+    return PREVENT_PAGE_RELOAD;
+}
  
 /**
  * Handles setting the initial state of all forms on the page.
@@ -123,7 +205,7 @@ function handleRangeCalculatorSubmission(){
 function setUpPageFormsInitialState(){
     setRangeTable(null);
 }
- 
+
 /**
  * Waits for DOM to load before calling any setup functions.
  */
