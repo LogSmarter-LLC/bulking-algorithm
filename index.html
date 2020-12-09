@@ -2,10 +2,12 @@
     <header>
         <title>Bulking Algorithm</title>
         <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </header>
-    <body >
+    <body>
+        <script src="bulking.js"></script>
         <div class="contentContainer">
-            <h1>
+            <h1 class="lsBorderColor">
                 An Algorithmic Approach To Bulking
             </h1>
             <p>
@@ -130,7 +132,6 @@
                         Choose this option if you want to gain quickly, are fairly lean, and are new to training.
                     </td>
                 </tr>
-            
             </table>
             <p>
                 Once the surplus range size has been chosen, you can determine your goal daily calorie intake range by adding the lower and upper end
@@ -142,8 +143,48 @@
             </div>
             <p>
                 This will be the range the individual should eat within at the start of their bulk. In the next section, I will explain when and how to
-                change the size of the surplus range if it is necessary.
+                change the size of the surplus range if it is necessary. You can use the form below to calculate your suggested bulking intake ranges.
             </p>
+            <div class="formTitle forceCenter greyBorder greyBackground">
+                Surplus Range Calculator
+            </div>
+            <form onsubmit="return handleRangeCalculatorSubmission();" class="greyBorder">
+                <div class="formField">
+                    Maintenance Kcal <input type="number" id="maintenanceKcals">
+                </div>
+                <button class="surplusButton formField greyBorder" type="submit">Calculate Surplus</button>
+                <table class="lsTable">
+                    <tr class="lsBackgroundColor">
+                        <th style="width:40%">
+                            Approach
+                        </th>
+                        <th style="width:60%">
+                            Surplus
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="forceCenter">
+                            Conservative
+                        </td>
+                        <td class="forceCenter" id="personalConservativeRange">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="forceCenter">
+                            Moderate
+                        </td>
+                        <td class="forceCenter" id="personalModerateRange">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="forceCenter">
+                            Aggressive
+                        </td>
+                        <td class="forceCenter" id="personalAggressiveRange">
+                        </td>
+                    </tr>
+                </table>
+            </form>
             <h2>
                 2. Adjust Surplus Based On Rate Of Weight Gain
             </h2>

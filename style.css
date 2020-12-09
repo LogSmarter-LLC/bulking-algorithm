@@ -8,6 +8,12 @@ html {
     padding: 15px
 }
 
+:root {
+    --ls-theme-color: #43dbbd;
+    --ls-theme-color-darker: #3B896D;
+    --grey-color: #c0c0c0;
+}
+
 .contentContainer {
     max-width: 1000px;
     margin-top: 20px;
@@ -30,7 +36,6 @@ html {
 }
 
 .contentContainer h1 {
-    border-color: #43dbbd;
     border-style: solid;
     border-width: 4px;
     border-radius: 8px;
@@ -46,7 +51,7 @@ html {
 }
 
 .imageContainer {
-    border-color: #c0c0c0;
+    border-color: var(--grey-color);
     border-width: 4px;
     border-style: solid;
     width: 90%;
@@ -66,7 +71,7 @@ html {
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    display: block;
+    width: 100%;
     max-width: 900px;
     min-width: 300px;
     width: 90%;
@@ -82,16 +87,78 @@ html {
     padding: 5px;
 }
 
+.forceCenter {
+    text-align: center;
+}
+
+.formTitle {
+    font-weight: bold;
+    font-size: x-large;
+    color: white;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 4px;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 8px;
+}
+
+.formField {
+    width: fit-content;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+button {
+    color: white;
+    font-size: large;
+    background-color: var(--grey-color);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.widthEnforcer {
+    width: 180px;
+}
+
+button:hover {
+    cursor: pointer;
+    border-color: var(--ls-theme-color);
+}
+
+.lsBorderColor {
+    border-color: var(--ls-theme-color);
+}
+
 .lsBackgroundColor {
-    background-color: #43dbdb;
+    background-color: var(--ls-theme-color);
     color: white;
 }
 
 .lsThemeText {
-    color: #43dbdb;
+    color: var(--ls-theme-color);
     font-weight: bold;
 }
 
-.forceCenter {
-    text-align: center;
+.greyBorder {
+    border-color: var(--grey-color);
+}
+
+.greyBackground {
+    background-color: var(--grey-color);
 }
