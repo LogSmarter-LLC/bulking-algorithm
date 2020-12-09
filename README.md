@@ -23,4 +23,4 @@ find a calorie surplus that mitigates the risk of them gaining weight too fast o
 - JS
     
 ## Project Results
-[GITHUB_PAGES_URL_GOES_HERE]
+https://logsmarter-llc.github.io/bulking-algorithm/
