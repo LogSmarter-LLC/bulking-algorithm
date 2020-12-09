@@ -81,7 +81,7 @@ const WEIGHT_MAINTENANCE_THRESHOLD = 1;
  * Rate of weight change per week in % of total starting body weight represents an inclusive
  * [min,max] range where weekly change in % body weight is optimal. Should Divide by 100 if
  * using in calculations to get as a %. This is the maximum rate that is still considered
- * optimal for bulking. Optinally could multiply the decimal being compared to by 100.
+ * optimal for bulking. Optionally could multiply the decimal being compared to by 100.
  */
 const MAX_BULK_RATE = 0.375;
 
@@ -136,9 +136,9 @@ function handleRangeCalculatorSubmission(){
  * Form submission handler for rate of weight gain calculator.
  * First checks if the rate of weight gain can be calculated.
  * If it can then the user is told whether they are gaining
- * fast, slow or optimally. Othewrise the user is told 
+ * fast, slow or optimally. Otherwise the user is told 
  * if they are losing weight, have maintained their weight or
- * some type of error has occured. This message is then displayed 
+ * some type of error has occurred. This message is then displayed 
  * below the rate of weight gain calculator.
  */
 function handleRateOfWeightGainCalculatorSubmission(){
